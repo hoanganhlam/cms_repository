@@ -1,0 +1,29 @@
+$container-offset: (14 * $gap) !default
+
+.container
+    flex-grow: 1
+    margin: 0 auto
+    position: relative
+    width: auto
+
+    &.small
+        max-width: 600px
+
+    &.is-fluid
+        max-width: none
+        padding-left: $gap
+        padding-right: $gap
+        width: 100%
+
+    +desktop
+        max-width: $desktop - $container-offset
+    +until-widescreen
+        &.is-widescreen
+            max-width: $widescreen - $container-offset
+    +until-fullhd
+        &.is-fullhd
+            max-width: $fullhd - $container-offset
+    +widescreen
+        max-width: $widescreen - $container-offset
+    +fullhd
+        max-width: $fullhd - $container-offset
